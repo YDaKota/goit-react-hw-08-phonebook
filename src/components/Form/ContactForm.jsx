@@ -1,28 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ContactForm.module.css';
 
-export default class ContactForm extends Component {
-    state = {
-    name: '',
-    number: '',
-    };
+function ContactForm ({ onSubmit }) {
+    const [name, setName] = useState('');
+    const [number, setNumber] = useState('');
 
-    handleChange = event => {
-    const { name, value } = event.currentTarget;
-    this.setState({ [name]: value });
-    };
+    const handleChange = event => {
+    const { name, value } = event.target;
+    switch (name) {
+        case 'name':
+            setName(value);
+            break;
+        case 'number':
+            setNumber(value);
+            break;
+        default:
+            break;
+    }};
 
-    handleSubmit = event => {
-    event.preventDefault();
-    this.props.onSubmit(this.state);
-    this.setState({ name: '', number: '' });
-    };
+    const handleSubmit = event => {
+        event.preventDefault();
+        onSubmit(name, number);
+        setName('');
+        setNumber('');
+    }
 
-    render() {
-    const { name, number } = this.state;
     return (
-        <form className={styles.form} onSubmit={this.handleSubmit}>
+        <form className={styles.form} onSubmit={handleSubmit}>
         <label className={styles.label}>
             Name
             <input
@@ -33,7 +39,7 @@ export default class ContactForm extends Component {
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
-            onChange={this.handleChange}
+            onChange={handleChange}
             />
         </label>
         <label className={styles.label}>
@@ -46,7 +52,7 @@ export default class ContactForm extends Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             value={number}
-            onChange={this.handleChange}
+            onChange={handleChange}
             />
         </label>
         <button className={styles.btn} type="submit">
@@ -54,10 +60,15 @@ export default class ContactForm extends Component {
         </button>
         </form>
     );
-    }
 }
+
 
 ContactForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
 };
+
+export default ContactForm;
+
+
+
 
