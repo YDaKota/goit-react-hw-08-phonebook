@@ -1,5 +1,4 @@
 import { configureStore } from '@reduxjs/toolkit';
-// import { rootReducer } from "./reducer";
 import { persistStore,
     persistReducer,
     FLUSH,
@@ -8,12 +7,13 @@ import { persistStore,
     PERSIST,
     PURGE,
     REGISTER, } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';// defaults to localStorage for web
+import storage from 'redux-persist/lib/storage';
 import contactsReducer from './contactsSlice';
 
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: 'filter',
 };
 
 const persistedReducer = persistReducer(persistConfig, contactsReducer);
