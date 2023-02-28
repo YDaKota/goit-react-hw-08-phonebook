@@ -1,14 +1,11 @@
 import React from 'react';
 import styles from './ContactFilter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateFilter } from '../../redux/contactsSlice';
+import { changeFilterAction } from '../../redux/contactsSlice';
 import { selectFilter } from 'redux/selectors';
 
 
 export default function ContactFilter() {
-    // const dispatch = useDispatch();
-    // const filter = useSelector(state => state.contacts.filter);
-
     const dispatch = useDispatch();
     const filter = useSelector(selectFilter);
 
@@ -18,7 +15,7 @@ export default function ContactFilter() {
             className={styles.input}
             type="text"
             value={filter}
-            onChange={(e) => dispatch(updateFilter(e.target.value)) }
+            onChange={(e) => dispatch(changeFilterAction(e.target.value)) }
             />
         </label>
     );

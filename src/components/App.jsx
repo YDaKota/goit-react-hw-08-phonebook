@@ -1,14 +1,27 @@
-import React from 'react';
+import { useEffect } from 'react';
 import ContactForm from './Form/ContactForm';
 import ContactList from './ContactList/ContactList';
 import Container from './Container/Container';
 import ContactFilter from './ContactFilter/ContactFilter';
-import { useSelector } from 'react-redux';
-import { selectContacts} from 'redux/selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectContacts, getIsLoading, getErrorMessage } from 'redux/selectors';
+import { fetchContacts } from 'redux/operations';
 
 function App() {
-  
+  const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
+  const isLoading = useSelector(getIsLoading);
+  const errorMessage = useSelector(getErrorMessage);
+  
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (errorMessage) {
+      alert('Error, ' + errorMessage);
+    }
+  }, [errorMessage]);
 
     return (
       <Container>
@@ -23,6 +36,7 @@ function App() {
         ) : (
           <p>Please add first contact</p>
         )}
+        { isLoading && <p>Loading...</p> }
       </Container>
     );
 }
