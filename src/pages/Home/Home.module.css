@@ -1,0 +1,22 @@
+.container {
+    display: 'block';
+    margin: 0 auto;
+    width: 600px;
+    text-align: right;
+}
+
+.title {
+    width: 600;
+    font-weight: 700;
+    font-size: 31px;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.text {
+    font-size: 20;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.5;
+    padding: 10px;
+}
