@@ -1,11 +1,6 @@
 import { useEffect, lazy, Suspense } from 'react';
-// import ContactForm from '../Form/ContactForm';
-// import ContactList from '../ContactList/ContactList';
-// import Container from '../Container/Container';
-// import ContactFilter from '../ContactFilter/ContactFilter';
 import { useSelector, useDispatch } from 'react-redux';
 import { getErrorMessage } from 'redux/contacts/selectors';
-// import { fetchContacts } from 'redux/contacts/operations';
 import { fetchCurrentUser } from 'redux/auth/operation';
 import { selectIsRefreshing } from 'redux/auth/selectors';
 import { ToastContainer, toast } from 'react-toastify';
@@ -24,8 +19,6 @@ const Page404 = lazy(() => import('pages/Page404'));
 
 function App() {
   const dispatch = useDispatch();
-  // const contacts = useSelector(selectContacts);
-  // const isLoading = useSelector(getIsLoading);
   const errorMessage = useSelector(getErrorMessage);
   const isRefreshing = useSelector(selectIsRefreshing);
   

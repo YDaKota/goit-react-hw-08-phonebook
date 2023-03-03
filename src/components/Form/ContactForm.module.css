@@ -4,8 +4,6 @@
 }
 
 .label {
-    /* margin-top: 10px;
-    font-weight: 500; */
     font-size: 18px;
 }
 
@@ -34,15 +32,9 @@
     display: inline-block;
     font-size: 16px;
     padding: 6px;
-    /* border: 1px solid black; */
     border: none;
     border-radius: 5px;
 }
-
-/* .btn:hover {
-    background-color: rgb(199, 35, 128);
-    color: white;
-} */
 
 .text {
     text-align: left;

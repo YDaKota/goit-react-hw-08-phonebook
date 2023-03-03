@@ -27,7 +27,6 @@ const Home = () => {
       <div style={styles.container}>
         <h1 style={styles.title}>This is a PhoneBook service</h1>
         <p style={styles.text}>You can create your own account and get record and use contacts from anywhere.</p>
-        {/* <img src="../../public/phone-book.png" alt="phone-book-img"/> */}
       </div>
     );
   };
