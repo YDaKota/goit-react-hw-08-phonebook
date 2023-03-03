@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_08_phonebook=self.webpackChunkgoit_react_hw_08_phonebook||[]).push([[936],{4936:function(e,n,o){o.r(n),o.d(n,{default:function(){return s}});var c="Home_container__w+u63",t="Home_title__L087v",a="Home_text__YlQ2v",r=o(184),s=function(){return(0,r.jsxs)("div",{className:c,children:[(0,r.jsx)("h1",{className:t,children:"This is a PhoneBook service"}),(0,r.jsx)("p",{className:a,children:"You can create your own account and get record and use contacts from anywhere."})]})}}}]);
+//# sourceMappingURL=936.7586d915.chunk.js.map
