@@ -1,0 +1,32 @@
+.wrapper {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    text-align: center;
+}
+
+.username {
+    font-weight: 900;
+    margin-right: 15px;
+    font-size: 22px;
+    color: black;
+    align-items: center;
+    justify-content: space-between;
+    line-height:normal;
+}
+
+.btn {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+    border-radius: 5px;
+    border: none;
+    margin-right: 50px;
+}
+
+/* .btn:hover,
+:focus {
+    background-color: #5ab8c7;
+} */

@@ -1,16 +1,18 @@
 .list {
     /* margin-top: 30px; */
     /* margin: 0; */
-    padding-left: 75px;
     list-style: none;
     color: black;
     font-weight: 500;
     font-size: 18px;
+    padding-left: 85px;
+    text-align: center;
 }
 
 .item {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 2px;
 }
 
@@ -22,18 +24,25 @@
     margin-right: 10px;
 }
 
-.btn {
-    /* height: auto; */
+/* .btn {
     cursor: pointer;
-    /* display: inline-block; */
     font-size: 16px;
     padding: 2px;
     border-radius: 5px;
     border: none;
     width: 60px;
-}
-
-/* .item:hover,
-.btn:hover {
-    color: rgb(199, 35, 128);
 } */
+
+.btn {
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 15%);
+    border-radius: 5px;
+    border: none;
+    margin-right: 50px;
+    background-color: #347474;
+    color: #fff;
+    text-transform: uppercase;
+}

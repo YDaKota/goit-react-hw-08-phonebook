@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import styles from './ContactForm.module.css';
 import { nanoid } from 'nanoid';
-import { addContact } from '../../redux/operations';
+import { addContact } from '../../redux/contacts/operations';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/contacts/selectors';
+import { Button } from '@mui/material';
 
-function ContactForm () {
+export const ContactForm = () => {
     const [name, setName] = useState('');
     const [number, setNumber] = useState('');
     const dispatch = useDispatch();
@@ -44,12 +45,13 @@ function ContactForm () {
     return (
         <form className={styles.form} onSubmit={handleSubmit}>
         <label className={styles.label}>
-            Name
+            <p className={styles.text}>Name:</p>
             <input
             className={styles.input}
             value={name}
             type="text"
             name="name"
+            placeholder='Enter username'
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
@@ -57,11 +59,12 @@ function ContactForm () {
             />
         </label>
         <label className={styles.label}>
-            Phone number
+            <p className={styles.text}>Phone number:</p>
             <input
             className={styles.input}
             type="tel"
             name="number"
+            placeholder='(067) 111-22-33'
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
@@ -69,14 +72,24 @@ function ContactForm () {
             onChange={handleChange}
             />
         </label>
-        <button className={styles.btn} type="submit">
+        {/* <button className={styles.btn} type="submit">
             Add contact
-        </button>
+        </button> */}
+
+        <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2, ml: 1, color: '#fff', background: '#347474' }}
+          >
+            Add contact
+          </Button>
+
         </form>
     );
 }
 
-export default ContactForm;
+
 
 
 

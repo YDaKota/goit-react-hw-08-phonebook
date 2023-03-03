@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './ContactFilter.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { changeFilterAction } from '../../redux/contactsSlice';
-import { selectFilter } from 'redux/selectors';
+import { changeFilterAction } from '../../redux/contacts/contactsSlice';
+import { selectFilter } from 'redux/contacts/selectors';
 
 
-export default function ContactFilter() {
+export const ContactFilter = () => {
     const dispatch = useDispatch();
     const filter = useSelector(selectFilter);
 
@@ -15,6 +15,7 @@ export default function ContactFilter() {
             className={styles.input}
             type="text"
             value={filter}
+            placeholder="Search contacts"
             onChange={(e) => dispatch(changeFilterAction(e.target.value)) }
             />
         </label>

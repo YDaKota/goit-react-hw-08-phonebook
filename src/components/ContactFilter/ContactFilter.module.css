@@ -9,7 +9,8 @@
     margin-top: 10px;
     padding: 10px;
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 15px;
@@ -17,5 +18,5 @@
 }
 
 .input:focus {
-    outline-color: rgb(53, 42, 174);
+    outline-color: #29a4b7;
 }
